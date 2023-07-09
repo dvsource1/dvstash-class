@@ -7,8 +7,8 @@ declare global {
 const redisdb =
   globalThis.redis ||
   new Redis({
-    url: process.env.UPSTASH_REDIS_REST_URL,
-    token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    url: process.env.UPSTASH_REDIS_REST_URL || '',
+    token: process.env.UPSTASH_REDIS_REST_TOKEN || '',
   })
 if (process.env.NODE_ENV === 'production') globalThis.redis = redisdb
 
