@@ -31,7 +31,6 @@ export async function GET(req: Request) {
     }
 
     redisdb.set(`STUDENT.${prismaStudent.id}`, prismaStudent)
-    console.log('[API/STUDENT | GET]', prismaStudent)
     return NextResponse.json(prismaStudent)
   } catch (err) {
     console.error('[API/STUDENT | GET]', err)
@@ -70,8 +69,6 @@ export async function POST(req: Request) {
         year,
       },
     })
-
-    redisdb.set(`STUDENT.${student.id}`, student)
 
     return NextResponse.json(student)
   } catch (err) {
