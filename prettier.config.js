@@ -5,5 +5,8 @@ module.exports = {
   singleQuote: true,
   bracketSameLine: true,
   arrowParens: 'avoid',
-  plugins: [require('prettier-plugin-tailwindcss')],
+  plugins: [
+    require('prettier-plugin-tailwindcss'),
+    require('prettier-plugin-prisma'),
+  ],
 }
